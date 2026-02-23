@@ -1,3 +1,23 @@
+/*
+==========================================================================================================================
+Quality Checks
+==========================================================================================================================
+
+Script Purpose:
+		This script performs various quality checks for data consistency, accuracy, and standardization across the 'silver'
+		schema. It includes checks for:
+		- Null or duplicate primary keys
+		- Unwanted spaces in string fields
+		- Data standardization and consistency
+		- Invalid date ranges and orders
+		- Data consistency between related fields
+
+Usage Notes:
+		- Run these checks after data loading silver Layer.
+		- Investigate and resolve any discrepencies found during the checks.
+==========================================================================================================================
+*/
+
 IF OBJECT_ID('bronze.crm_sales_details','U') IS NOT NULL
 	DROP TABLE bronze.crm_sales_details;
 CREATE TABLE bronze.crm_sales_details (
